@@ -135,12 +135,87 @@
 </section>
 
 <section id="portfolio" class="portfolio">
+    <section>
     <h2>Our Work</h2>
+
     <div class="portfolio-grid">
-        <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e" alt="Project 1">
-        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c" alt="Project 2">
-        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="Project 3">
+
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+
+                <div class="flip-card-front">
+                    <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e" alt="Industrial Solutions">
+                       <div class="image-overlay">
+        Click to learn more
     </div>
+                </div>
+
+                <div class="flip-card-back">
+                    <h3>Industrial Solutions</h3>
+                    <p>
+                        We provide industrial automation, equipment maintenance,
+                        machine installations, and technical support services.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+
+                <div class="flip-card-front">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c" alt="Software Development">
+                <div class="image-overlay">
+        Click to learn more
+    </div>
+                </div>
+
+                <div class="flip-card-back">
+                    <h3>Software Development</h3>
+                    <p>
+                        We create websites, web applications, inventory systems,
+                        dashboards, and custom software solutions.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+
+                <div class="flip-card-front">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="Electronics">
+               <div class="image-overlay">
+        Click to learn more
+    </div>
+                </div>
+
+                <div class="flip-card-back">
+                    <h3>Electronics & Innovation</h3>
+                    <p>
+                        We design electronic systems, IoT solutions, embedded
+                        devices, and technology innovations.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Modal -->
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+
+        <h3 id="projectTitle"></h3>
+
+        <p id="projectDescription"></p>
+    </div>
+</div>
 </section>
 <!-- SOCIAL PROOF / TESTIMONIALS -->
 <section id="testimonials" class="social-proof">
@@ -215,5 +290,25 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+function showProject(title, description) {
+    document.getElementById("projectTitle").textContent = title;
+    document.getElementById("projectDescription").textContent = description;
+
+    document.getElementById("projectModal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("projectModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+    const modal = document.getElementById("projectModal");
+
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+};
+</script>
 </body>
 </html>
