@@ -4,12 +4,58 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
 body {
-    background: #f7f9fc;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
     color: #333;
+    background: linear-gradient(
+        135deg,
+        #f8fafc 0%,
+        #eef5ff 50%,
+        #f8fafc 100%
+    );
+    position: relative;
+    overflow-x: hidden;
 }
 
+/* Subtle logo watermark */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image: url("https://github.com/Shikoshee/R-M-Technologies/blob/main/IMG-20260610-WA0018.jpg?raw=true");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 450px;
+
+    opacity: 0.085;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Soft brand accent */
+body::after {
+    content: "";
+    position: fixed;
+
+    top: -250px;
+    right: -250px;
+
+    width: 700px;
+    height: 700px;
+
+    background: radial-gradient(
+        circle,
+        rgba(0, 123, 255, 0.08),
+        transparent 70%
+    );
+
+    pointer-events: none;
+    z-index: -1;
+}
 /* Navbar */
 .navbar {
     display: flex;
